@@ -7,26 +7,20 @@ namespace humble
 {
     public class Dataz
     {
+        
+        private humbleEntities db = new humbleEntities(); 
+        
         public static List<Product> returnProducts()
         {
-            using (humbleEntities context = new humbleEntities())
-            {
-                return context.Products.ToList();
-            }
+            return db.Products.ToList();
         }
         public static List<Category> returnCategories()
         {
-            using (humbleEntities context = new humbleEntities())
-            {
-                return context.Categories.ToList();
-            }
+            return db.Categories.ToList();
         }
         public static List<Order> returnOrders()
         {
-            using (humbleEntities context = new humbleEntities())
-            {
-                return context.Orders.ToList();
-            }
+            return db.Orders.ToList();
         }
     }
 }
